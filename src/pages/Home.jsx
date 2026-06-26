@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-
+import logo from "../assets/img/argentBankLogo.png";
+import chatIcon from "../assets/img/icon-chat.png";
+import money from "../assets/img/icon-money.png";
+import security from "../assets/img/icon-security.png";
+import "../index.css";
+import "../main.css";
 
 function Home() {
 
@@ -10,8 +15,8 @@ function Home() {
      <nav className="main-nav">
       <Link className="main-nav-logo" to="/" >
         <img
-          className="main-nav-logo-image"
-          src="/img/argentBankLogo.png"
+           className="main-nav-logo-image"
+          src={logo}
           alt="Argent Bank Logo"
         />
         <h1 className="sr-only">Argent Bank</h1>
@@ -36,7 +41,7 @@ function Home() {
       <section className="features">
         <h2 className="sr-only">Features</h2>
         <div className="feature-item">
-          <img src="/img/icon-chat.png" alt="Chat Icon" className="feature-icon" />
+          <img src={chatIcon} alt="Chat Icon" className="feature-icon" />
           <h3 className="feature-item-title">You are our #1 priority</h3>
           <p>
             Need to talk to a representative? You can get in touch through our
@@ -44,22 +49,16 @@ function Home() {
           </p>
         </div>
         <div className="feature-item">
-          <img
-            src="/img/icon-money.png"
-            alt="Chat Icon"
-            className="feature-icon"
-          />
+         
+         <img src={money} alt="Money Icon" className="feature-icon" />
+         
           <h3 className="feature-item-title">More savings means higher rates</h3>
           <p>
             The more you save with us, the higher your interest rate will be!
           </p>
         </div>
         <div className="feature-item">
-          <img
-            src="/img/icon-security.png"
-            alt="Chat Icon"
-            className="feature-icon"
-          />
+          <img src={security} alt="Security Icon" className="feature-icon" />
           <h3 className="feature-item-title">Security you can trust</h3>
           <p>
             We use top of the line encryption to make sure your data and money
