@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/img/argentBankLogo.png";
-import "../index.css";
+
 import "../main.css";
 
 function Header() {
