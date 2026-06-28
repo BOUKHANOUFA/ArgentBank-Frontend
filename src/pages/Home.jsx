@@ -6,7 +6,7 @@ import security from "../assets/img/icon-security.png";
 import Navbar from "../components/Navbar";
 
 import "../main.css";
-import Header from "../components/Header";
+
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Footer from "../components/Footer";
@@ -14,7 +14,7 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
-      <Header />
+      <Navbar />
       <main>
         <Hero />
         <Features />

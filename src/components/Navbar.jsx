@@ -1,16 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/img/argentBankLogo.png";
-import "../main.css";
+function Navbar() {
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const user = useSelector((state) => state.user.user);
 
-export default function Navbar() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
- 
-  const isLoggedIn = false;
-  const userName = "Tony";
-
   const handleLogout = () => {
-   
+    dispatch(logout());
     navigate("/");
   };
 
@@ -19,7 +15,7 @@ export default function Navbar() {
       <Link className="main-nav-logo" to="/">
         <img
           className="main-nav-logo-image"
-          src={logo}
+          src="/src/assets/img/argentBankLogo.png"
           alt="Argent Bank Logo"
         />
         <h1 className="sr-only">Argent Bank</h1>
@@ -35,7 +31,7 @@ export default function Navbar() {
           <>
             <Link className="main-nav-item" to="/profile">
               <i className="fa fa-user-circle"></i>
-              {userName}
+              {user?.firstName || "User"}
             </Link>
 
             <button className="main-nav-item" onClick={handleLogout}>
@@ -48,3 +44,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar;

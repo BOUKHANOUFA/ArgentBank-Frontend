@@ -1,5 +1,5 @@
 import "../main.css";
-import { Navigate, Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 
@@ -14,25 +14,7 @@ export default function Profile() {
 
   return (
     <>
-      <nav className="main-nav">
-        <Link className="main-nav-logo" to="/">
-          <img
-            className="main-nav-logo-image"
-            src="/src/assets/img/argentBankLogo.png"
-            alt="Argent Bank Logo"
-          />
-        </Link>
-
-        <div>
-          <Link className="main-nav-item" to="/profile">
-            Tony
-          </Link>
-
-          <Link className="main-nav-item" to="/">
-            Sign Out
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
 
       <main className="main bg-dark">
         <h1>Welcome back Tony</h1>

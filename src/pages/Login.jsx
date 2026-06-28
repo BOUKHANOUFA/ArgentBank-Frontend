@@ -5,26 +5,8 @@ import Navbar from "../components/Navbar";
 export default function Login() {
   return (
     <>
-      <Navbar className="main-nav">
-       <Link className="main-nav-logo" to="/">
-          <img
-            className="main-nav-logo-image"
-            src="/src/assets/img/argentBankLogo.png"
-            alt="Argent Bank Logo"
-          />
-          <h1 className="sr-only">Argent Bank</h1>
-        </Link>
-
-        <div>
-           <Link className="main-nav-item" to="/login">
-            <i className="fa fa-user-circle"></i>
-            Sign In
-          </Link>
-            
-         
-         
-        </div>
-      </Navbar>
+      
+      <Navbar />
 
       <main className="main bg-dark">
         <section className="sign-in-content">
