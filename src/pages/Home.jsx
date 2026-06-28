@@ -3,6 +3,7 @@ import logo from "../assets/img/argentBankLogo.png";
 import chatIcon from "../assets/img/icon-chat.png";
 import money from "../assets/img/icon-money.png";
 import security from "../assets/img/icon-security.png";
+import Navbar from "../components/Navbar";
 
 import "../main.css";
 import Header from "../components/Header";

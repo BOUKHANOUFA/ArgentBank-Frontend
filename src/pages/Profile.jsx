@@ -1,6 +1,7 @@
 import "../main.css";
 import { Navigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Navbar from "../components/Navbar";
 
 export default function Profile() {
 
