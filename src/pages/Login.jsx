@@ -1,23 +1,27 @@
 import "../main.css";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
     <>
       <nav className="main-nav">
-        <a className="main-nav-logo" href="/">
+       <Link className="main-nav-logo" to="/">
           <img
             className="main-nav-logo-image"
             src="/src/assets/img/argentBankLogo.png"
             alt="Argent Bank Logo"
           />
           <h1 className="sr-only">Argent Bank</h1>
-        </a>
+        </Link>
 
         <div>
-          <a className="main-nav-item" href="/login">
+           <Link className="main-nav-item" to="/login">
             <i className="fa fa-user-circle"></i>
             Sign In
-          </a>
+          </Link>
+            
+         
+         
         </div>
       </nav>
 
@@ -42,9 +46,9 @@ export default function Login() {
               <label htmlFor="remember-me">Remember me</label>
             </div>
 
-            <a href="/profile" className="sign-in-button">
+            <Link to="/profile" className="sign-in-button">
               Sign In
-            </a>
+            </Link>
           </form>
         </section>
       </main>
