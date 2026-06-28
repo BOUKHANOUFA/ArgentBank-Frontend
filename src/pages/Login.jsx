@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -15,12 +16,14 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      // 1. LOGIN API
+      // 1. LOGIN
       const response = await fetch(
         "http://localhost:3001/api/v1/user/login",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
             email: username,
             password: password,
@@ -29,9 +32,15 @@ export default function Login() {
       );
 
       const data = await response.json();
-      const token = data.body.token;
 
-      // 2. PROFILE API
+      const token = data?.body?.token;
+
+      if (!token) {
+        alert("Login failed");
+        return;
+      }
+
+      // 2. PROFILE
       const profileResponse = await fetch(
         "http://localhost:3001/api/v1/user/profile",
         {
@@ -56,7 +65,7 @@ export default function Login() {
       // 4. redirect
       navigate("/profile");
     } catch (error) {
-      console.log("Erreur login :", error);
+      console.log("Login error:", error);
     }
   };
 
@@ -67,7 +76,7 @@ export default function Login() {
 
         <form onSubmit={handleLogin}>
           <div className="input-wrapper">
-            <label>Username</label>
+            <label>Username (email)</label>
             <input
               type="text"
               value={username}
@@ -84,7 +93,7 @@ export default function Login() {
             />
           </div>
 
-          <button className="sign-in-button" type="submit">
+          <button type="submit" className="sign-in-button">
             Sign In
           </button>
         </form>
