@@ -13,61 +13,62 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      // 1. LOGIN
-      const response = await fetch(
-        "http://localhost:3001/api/v1/user/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: username,
-            password: password,
-          }),
-        }
-      );
+  try {
+    console.log("LOGIN CLICK");
 
-      const data = await response.json();
-
-      const token = data?.body?.token;
-
-      if (!token) {
-        alert("Login failed");
-        return;
+    // 1. LOGIN
+    const response = await fetch(
+      "http://localhost:3001/api/v1/user/login",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: username.trim(),
+          password: password.trim(),
+        }),
       }
+    );
 
-      // 2. PROFILE
-      const profileResponse = await fetch(
-        "http://localhost:3001/api/v1/user/profile",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+    const data = await response.json();
+    console.log("LOGIN DATA:", data);
 
-      const profileData = await profileResponse.json();
+    const token = data?.body?.token;
 
-      // 3. Redux
-      dispatch(
-        loginSuccess({
-          token: token,
-          user: profileData.body,
-        })
-      );
-
-      // 4. redirect
-      navigate("/profile");
-    } catch (error) {
-      console.log("Login error:", error);
+    if (!token) {
+      alert("Login failed");
+      return;
     }
-  };
+
+    // 2. PROFILE 
+    const profileResponse = await fetch(
+      "http://localhost:3001/api/v1/user/profile",
+      {
+        method: "GET", // 
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    const profileData = await profileResponse.json();
+    console.log("PROFILE DATA:", profileData);
+
+    // 3. Redux
+    dispatch(
+      loginSuccess({
+        token: token,
+        user: profileData.body,
+      })
+    );
+
+    // 4. redirect
+    navigate("/profile");
+  } catch (error) {
+    console.log("LOGIN ERROR:", error);
+  }
+};
 
   return (
     <main className="main bg-dark">
