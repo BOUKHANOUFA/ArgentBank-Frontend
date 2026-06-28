@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 export default function Login() {
   return (
     <>
-      <nav className="main-nav">
+      <Navbar className="main-nav">
        <Link className="main-nav-logo" to="/">
           <img
             className="main-nav-logo-image"
@@ -24,7 +24,7 @@ export default function Login() {
          
          
         </div>
-      </nav>
+      </Navbar>
 
       <main className="main bg-dark">
         <section className="sign-in-content">
