@@ -1,7 +1,14 @@
+import bankTree from "../assets/img/bank-tree.jpeg";
+
+
 function Hero() {
   return (
-    <div className="hero">
+    <div className="hero"
+     style={{ backgroundImage: `url(${bankTree})` }}
+    >
+
       <section className="hero-content">
+        
         <h2 className="sr-only">Promoted Content</h2>
         <p className="subtitle">No fees.</p>
         <p className="subtitle">No minimum deposit.</p>
