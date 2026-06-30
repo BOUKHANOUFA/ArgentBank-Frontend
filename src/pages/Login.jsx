@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginSuccess } from "../redux/userSlice";
+import Footer from "../components/Footer";
 import "../main.css";
 
 export default function Login() {
@@ -71,7 +72,8 @@ export default function Login() {
 };
 
   return (
-    <main className="main bg-dark">
+   
+      <main className="main bg-dark">
       <section className="sign-in-content">
         <h1>Sign In</h1>
 
@@ -100,5 +102,6 @@ export default function Login() {
         </form>
       </section>
     </main>
-  );
+   
+  )
 }

@@ -51,36 +51,66 @@ export default function Profile() {
   };
 
   return (
-    <>
-      <Navbar />
+  <>
+    <Navbar />
 
-      <main className="main bg-dark">
+    <main className="main bg-dark">
+      <div className="header">
         {!editMode ? (
           <>
             <h1>
-              Welcome back {user?.userName}
+              Welcome back
+              <br />
+              {user?.userName}!
             </h1>
 
-            <button onClick={() => setEditMode(true)}>
+            <button
+              className="edit-button"
+              onClick={() => setEditMode(true)}
+            >
               Edit Name
             </button>
           </>
         ) : (
           <>
-            <h1>Edit Name</h1>
+            <h1>Edit user info</h1>
 
-            <input
-              value={newUsername}
-              onChange={(e) => setNewUsername(e.target.value)}
-            />
+            <div className="input-wrapper">
+              <label>User name</label>
+              <input
+                type="text"
+                value={newUsername}
+                onChange={(e) => setNewUsername(e.target.value)}
+              />
+            </div>
 
-            <button onClick={handleUpdate}>Save</button>
-            <button onClick={() => setEditMode(false)}>
-              Cancel
-            </button>
+            <div className="input-wrapper">
+              <label>First name</label>
+              <input type="text" value={user?.firstName} disabled />
+            </div>
+
+            <div className="input-wrapper">
+              <label>Last name</label>
+              <input type="text" value={user?.lastName} disabled />
+            </div>
+
+            <div>
+              <button className="edit-button" onClick={handleUpdate}>
+                Save
+              </button>
+
+              <button
+                className="edit-button"
+                onClick={() => setEditMode(false)}
+                style={{ marginLeft: "10px", backgroundColor: "#ccc", color: "#000" }}
+              >
+                Cancel
+              </button>
+            </div>
           </>
         )}
-      </main>
-    </>
-  );
+      </div>
+    </main>
+  </>
+);
 }
