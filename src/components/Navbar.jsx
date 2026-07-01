@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../redux/userSlice";
-import "../main.css";
+
 function Navbar() {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   const user = useSelector((state) => state.user.user);
@@ -28,20 +28,20 @@ function Navbar() {
       <div>
         {!isLoggedIn ? (
           <Link className="main-nav-item" to="/login">
-            <i className="fa fa-user-circle"></i>
+            <i className="fa-solid fa-user-circle"></i>
             Sign In
           </Link>
         ) : (
           <>
             <Link className="main-nav-item" to="/profile">
-              <i className="fa fa-user-circle"></i>
+              <i className="fa-solid fa-user-circle"></i>
               {user?.firstName || "User"}
             </Link>
 
-            <button className="main-nav-item" onClick={handleLogout}>
-              <i className="fa fa-sign-out"></i>
+            <Link className="main-nav-item" to="/" onClick={handleLogout}>
+              <i className="fa-solid fa-right-from-bracket"></i>
               Sign Out
-            </button>
+            </Link>
           </>
         )}
       </div>

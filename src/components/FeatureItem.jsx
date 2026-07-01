@@ -1,4 +1,4 @@
-import "../main.css";
+
 
 function FeatureItem({ icon, title, text }) {
   return (

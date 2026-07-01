@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import "../main.css";
+
 
 export default function Transactions() {
   return (

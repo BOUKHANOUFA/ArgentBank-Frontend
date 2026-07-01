@@ -5,7 +5,7 @@ import money from "../assets/img/icon-money.png";
 import security from "../assets/img/icon-security.png";
 import Navbar from "../components/Navbar";
 
-import "../main.css";
+
 
 import Hero from "../components/Hero";
 import Features from "../components/Features";

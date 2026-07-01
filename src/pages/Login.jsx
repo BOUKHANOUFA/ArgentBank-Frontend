@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { loginSuccess } from "../redux/userSlice";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import "../main.css";
+
 
 export default function Login() {
   const [username, setUsername] = useState("");
