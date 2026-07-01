@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import Account from "../components/Account";
+import Account from "../components/Account.jsx";
 import { loginSuccess } from "../redux/userSlice";
 
 export default function Profile() {

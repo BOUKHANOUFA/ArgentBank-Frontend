@@ -99,6 +99,10 @@ body {
   margin-bottom: 0;
   font-size: 0.9rem;
 }
+.main {
+  flex: 1;
+  min-height: 100vh;
+}
 
 @media (min-width: 920px) {
   .hero {
