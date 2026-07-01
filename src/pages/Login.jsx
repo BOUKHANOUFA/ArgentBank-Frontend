@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginSuccess } from "../redux/userSlice";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import "../main.css";
 
 export default function Login() {
@@ -41,6 +42,7 @@ export default function Login() {
       alert("Login failed");
       return;
     }
+    localStorage.setItem("token", token);
 
     // 2. PROFILE 
     const profileResponse = await fetch(

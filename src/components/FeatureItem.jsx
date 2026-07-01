@@ -1,3 +1,5 @@
+import "../main.css";
+
 function FeatureItem({ icon, title, text }) {
   return (
     <div className="feature-item">

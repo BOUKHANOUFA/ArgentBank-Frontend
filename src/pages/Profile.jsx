@@ -5,6 +5,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { loginSuccess } from "../redux/userSlice";
 
+
 export default function Profile() {
   const dispatch = useDispatch();
 
