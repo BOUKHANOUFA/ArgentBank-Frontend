@@ -73,9 +73,11 @@ export default function Login() {
   }
 };
 
-  return (
-   
-      <main className="main bg-dark">
+ return (
+  <>
+    <Navbar />
+
+    <main className="main bg-dark">
       <section className="sign-in-content">
         <h1>Sign In</h1>
 
@@ -104,6 +106,9 @@ export default function Login() {
         </form>
       </section>
     </main>
-   
-  )
+
+    
+    <Footer />
+  </>
+);
 }
