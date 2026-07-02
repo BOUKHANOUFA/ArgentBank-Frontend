@@ -1,5 +1,7 @@
 
-
+.main-nav-item i {
+  margin-right: 8px;
+}
 
 html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -18,7 +20,7 @@ body {
 
 .main {
   flex: 1;
-  min-height: 100vh;
+ 
 }
 
 .bg-dark {
@@ -58,7 +60,7 @@ body {
 
 .main-nav-item {
   text-decoration: none;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   
 }
 
@@ -105,10 +107,7 @@ body {
   margin-bottom: 0;
   font-size: 0.9rem;
 }
-.main {
-  flex: 1;
-  min-height: 100vh;
-}
+
 
 @media (min-width: 920px) {
   .hero {
