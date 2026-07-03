@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
+
 export default function Account({ title, amount, description }) {
   const navigate = useNavigate();
 
   return (
+    
     <section className="account">
       <div className="account-content-wrapper">
         <h3 className="account-title">{title}</h3>
@@ -20,5 +22,12 @@ export default function Account({ title, amount, description }) {
         </button>
       </div>
     </section>
+
+    
+        
+     
   );
+    
+    
+    
 }

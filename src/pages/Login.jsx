@@ -77,8 +77,8 @@ export default function Login() {
   <>
     <Navbar />
 
-    <main className="main bg-dark">
-      <section className="sign-in-content">
+  <main className="main sign-in-container">
+  <section className="sign-in-content">
         <h1>Sign In</h1>
 
         <form onSubmit={handleLogin}>
@@ -99,6 +99,11 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+           
+  <div className="input-remember">
+    <input type="checkbox" id="remember-me" />
+    <label htmlFor="remember-me">Remember me</label>
+  </div>
 
           <button type="submit" className="sign-in-button">
             Sign In

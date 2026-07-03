@@ -1,3 +1,88 @@
+/* CONTAINER VIOLET */
+.sign-in-container {
+  background-color: #12002b;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARTE BLANCHE */
+.sign-in-content {
+  background-color: white;
+  width: 320px;
+  padding: 2rem;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TITRE */
+.sign-in-content h1 {
+  margin-bottom: 1.5rem;
+}
+
+/* INPUTS */
+.input-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* INPUT STYLE */
+.input-wrapper input {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+/* CHECKBOX */
+.input-remember {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-remember input {
+  margin-right: 5px;
+}
+
+/* BOUTON */
+.sign-in-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00bc77;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.sign-in-content {
+  background-color: #12002b;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in-content h1 {
+  text-align: center;
+}
+.sign-in-container {
+  background-color: #12002b;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  text-align: center;
+}
+
 
 .main-nav-item i {
   margin-right: 8px;
@@ -8,7 +93,7 @@ html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   color: #2c3e50;
 }
 
@@ -176,12 +261,17 @@ body {
 }
 
 .sign-in-content {
-  box-sizing: border-box;
   background-color: white;
   width: 300px;
-  margin: 0 auto;
-  margin-top: 3rem;
   padding: 2rem;
+  height: auto;
+  border-radius: 5px;
+  text-align: center;
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .sign-in-icon {
@@ -298,4 +388,13 @@ body {
   .transaction-button {
     width: 200px;
   }
+}
+.edit-name input {
+  width: 300px;
+  padding: 8px;
+  font-size: 1rem;
+}
+.input-wrapper {
+  width: 300px;
+ 
 }

@@ -10,7 +10,7 @@ export default function Profile() {
   const dispatch = useDispatch();
 
   const { isLoggedIn, token, user } = useSelector((state) => state.user);
-
+ console.log (token , user) 
   const [editMode, setEditMode] = useState(false);
   const [newUsername, setNewUsername] = useState(user?.userName || "");
 
