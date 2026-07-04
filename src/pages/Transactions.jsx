@@ -63,7 +63,7 @@ export default function Transactions() {
             </div>
 
             {t.isOpen && (
-              <div style={{ marginTop: "15px" }}>
+              <div className="transaction-form">
                 <div className="input-wrapper">
                   <label>Category</label>
                   <select

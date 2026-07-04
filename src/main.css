@@ -79,9 +79,7 @@
   justify-content: center;
   align-items: center;
 }
-body {
-  text-align: center;
-}
+
 
 
 .main-nav-item i {
@@ -394,13 +392,47 @@ body {
   padding: 8px;
   font-size: 1rem;
 }
-.input-wrapper {
-  width: 300px;
+
  
-}
+
 .main {
   min-height: calc(100vh - 120px);
 }
 .page {
   min-height: calc(100vh - 120px);
+}
+
+
+
+
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.transaction-form .input-wrapper {
+  width: 100%;
+}
+
+.transaction-form select,
+.transaction-form input {
+  width: 100%;
+  padding: 8px;
+}
+.edit-user-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.edit-user-form .input-wrapper {
+  width: 100%;
+}
+body {
+  text-align: center;
 }
