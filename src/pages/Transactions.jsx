@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 
 export default function Transactions() {
   const [transactions, setTransactions] = useState([
@@ -95,7 +95,7 @@ export default function Transactions() {
         ))}
       </main>
       
-        <Footer /> 
+    
 </>
    
   );

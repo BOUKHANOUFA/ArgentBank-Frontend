@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginSuccess } from "../redux/userSlice";
-import Footer from "../components/Footer";
+
 import Navbar from "../components/Navbar";
 
 
@@ -113,7 +113,7 @@ export default function Login() {
     </main>
 
     
-    <Footer />
+  
   </>
 );
 }
