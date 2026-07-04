@@ -1,7 +1,43 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
-
+import Footer from "../components/Footer";
 
 export default function Transactions() {
+  const [transactions, setTransactions] = useState([
+    {
+      id: 1,
+      title: "Transaction #1",
+      amount: "$50.00",
+      category: "Grocery",
+      note: "",
+      isOpen: false,
+    },
+    {
+      id: 2,
+      title: "Transaction #2",
+      amount: "$120.00",
+      category: "Shopping",
+      note: "",
+      isOpen: false,
+    },
+  ]);
+
+  const toggleTransaction = (id) => {
+    setTransactions((prev) =>
+      prev.map((t) =>
+        t.id === id ? { ...t, isOpen: !t.isOpen } : t
+      )
+    );
+  };
+
+  const updateField = (id, field, value) => {
+    setTransactions((prev) =>
+      prev.map((t) =>
+        t.id === id ? { ...t, [field]: value } : t
+      )
+    );
+  };
+
   return (
     <>
       <Navbar />
@@ -11,22 +47,56 @@ export default function Transactions() {
           Transactions
         </h1>
 
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3>Transaction #1</h3>
-            <p>$50.00</p>
-            <p>Grocery</p>
-          </div>
-        </section>
+        {transactions.map((t) => (
+          <section key={t.id} className="account">
+            <div className="account-content-wrapper">
+              <h3>{t.title}</h3>
+              <p>{t.amount}</p>
+              <p>{t.category}</p>
 
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3>Transaction #2</h3>
-            <p>$120.00</p>
-            <p>Shopping</p>
-          </div>
-        </section>
+              <button
+                onClick={() => toggleTransaction(t.id)}
+                className="edit-button"
+              >
+                {t.isOpen ? "Close" : "Edit"}
+              </button>
+            </div>
+
+            {t.isOpen && (
+              <div style={{ marginTop: "15px" }}>
+                <div className="input-wrapper">
+                  <label>Category</label>
+                  <select
+                    value={t.category}
+                    onChange={(e) =>
+                      updateField(t.id, "category", e.target.value)
+                    }
+                  >
+                    <option>Grocery</option>
+                    <option>Shopping</option>
+                    <option>Transport</option>
+                    <option>Food</option>
+                  </select>
+                </div>
+
+                <div className="input-wrapper">
+                  <label>Note</label>
+                  <input
+                    type="text"
+                    value={t.note}
+                    onChange={(e) =>
+                      updateField(t.id, "note", e.target.value)
+                    }
+                  />
+                </div>
+              </div>
+            )}
+          </section>
+        ))}
       </main>
-    </>
+      
+        <Footer /> 
+</>
+   
   );
 }

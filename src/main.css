@@ -398,3 +398,6 @@ body {
   width: 300px;
  
 }
+.main {
+  min-height: calc(100vh - 120px);
+}
