@@ -5,11 +5,8 @@ import money from "../assets/img/icon-money.png";
 import security from "../assets/img/icon-security.png";
 import Navbar from "../components/Navbar";
 
-
-
 import Hero from "../components/Hero";
 import Features from "../components/Features";
-
 
 function Home() {
   return (
@@ -19,10 +16,8 @@ function Home() {
         <Hero />
         <Features />
       </main>
-    
     </>
   );
 }
 
 export default Home;
-

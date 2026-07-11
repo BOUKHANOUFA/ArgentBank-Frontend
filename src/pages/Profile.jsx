@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
@@ -10,7 +9,7 @@ export default function Profile() {
   const dispatch = useDispatch();
 
   const { isLoggedIn, token, user } = useSelector((state) => state.user);
- console.log (token , user) 
+  console.log(token, user);
   const [editMode, setEditMode] = useState(false);
   const [newUsername, setNewUsername] = useState(user?.userName || "");
 
@@ -31,7 +30,7 @@ export default function Profile() {
           body: JSON.stringify({
             userName: newUsername,
           }),
-        }
+        },
       );
 
       const data = await response.json();
@@ -40,7 +39,7 @@ export default function Profile() {
         loginSuccess({
           token,
           user: data.body,
-        })
+        }),
       );
 
       setEditMode(false);
@@ -63,10 +62,7 @@ export default function Profile() {
                 {user?.userName}!
               </h1>
 
-              <button
-                className="edit-button"
-                onClick={() => setEditMode(true)}
-              >
+              <button className="edit-button" onClick={() => setEditMode(true)}>
                 Edit Name
               </button>
             </>
@@ -74,51 +70,50 @@ export default function Profile() {
             <>
               <h1>Edit user info</h1>
 
-<div className="edit-user-form">
-  <div className="input-wrapper">
-    <label>User name</label>
-    <input
-      type="text"
-      value={newUsername}
-      onChange={(e) => setNewUsername(e.target.value)}
-    />
-  </div>
+              <div className="edit-user-form">
+                <div className="input-wrapper">
+                  <label>User name</label>
+                  <input
+                    type="text"
+                    value={newUsername}
+                    onChange={(e) => setNewUsername(e.target.value)}
+                  />
+                </div>
 
-  <div className="input-wrapper">
-    <label>First name</label>
-    <input type="text" value={user?.firstName} disabled />
-  </div>
+                <div className="input-wrapper">
+                  <label>First name</label>
+                  <input type="text" value={user?.firstName} disabled />
+                </div>
 
-  <div className="input-wrapper">
-    <label>Last name</label>
-    <input type="text" value={user?.lastName} disabled />
-  </div>
+                <div className="input-wrapper">
+                  <label>Last name</label>
+                  <input type="text" value={user?.lastName} disabled />
+                </div>
 
-  <div>
-    <button className="edit-button" onClick={handleUpdate}>
-      Save
-    </button>
+                <div>
+                  <button className="edit-button" onClick={handleUpdate}>
+                    Save
+                  </button>
 
-    <button
-      className="edit-button"
-      onClick={() => setEditMode(false)}
-      style={{
-        marginLeft: "10px",
-        backgroundColor: "#ccc",
-        color: "#000",
-      }}
-    >
-      Cancel
-    </button>
-  </div>
-</div>
+                  <button
+                    className="edit-button"
+                    onClick={() => setEditMode(false)}
+                    style={{
+                      marginLeft: "10px",
+                      backgroundColor: "#ccc",
+                      color: "#000",
+                    }}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
             </>
           )}
         </div>
 
         <h2 className="sr-only">Accounts</h2>
 
-       
         <Account
           title="Argent Bank Checking (x8349)"
           amount="$2,082.79"

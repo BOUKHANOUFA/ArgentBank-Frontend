@@ -1,11 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-
 const savedToken = localStorage.getItem("token");
 
 const initialState = {
- 
   token: savedToken || null,
   user: null,
   isLoggedIn: !!savedToken,
@@ -20,14 +17,13 @@ const userSlice = createSlice({
       state.user = action.payload.user;
       state.isLoggedIn = true;
 
-    localStorage.setItem("token", action.payload.token);
+      localStorage.setItem("token", action.payload.token);
     },
 
     logout: (state) => {
       state.token = null;
       state.user = null;
       state.isLoggedIn = false;
-
 
       localStorage.removeItem("token");
     },

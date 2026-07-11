@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 
-
 export default function Transactions() {
   const [transactions, setTransactions] = useState([
     {
@@ -24,17 +23,13 @@ export default function Transactions() {
 
   const toggleTransaction = (id) => {
     setTransactions((prev) =>
-      prev.map((t) =>
-        t.id === id ? { ...t, isOpen: !t.isOpen } : t
-      )
+      prev.map((t) => (t.id === id ? { ...t, isOpen: !t.isOpen } : t)),
     );
   };
 
   const updateField = (id, field, value) => {
     setTransactions((prev) =>
-      prev.map((t) =>
-        t.id === id ? { ...t, [field]: value } : t
-      )
+      prev.map((t) => (t.id === id ? { ...t, [field]: value } : t)),
     );
   };
 
@@ -43,9 +38,7 @@ export default function Transactions() {
       <Navbar />
 
       <main className="main bg-dark">
-        <h1 style={{ color: "white", textAlign: "center" }}>
-          Transactions
-        </h1>
+        <h1 style={{ color: "white", textAlign: "center" }}>Transactions</h1>
 
         {transactions.map((t) => (
           <section key={t.id} className="account">
@@ -84,9 +77,7 @@ export default function Transactions() {
                   <input
                     type="text"
                     value={t.note}
-                    onChange={(e) =>
-                      updateField(t.id, "note", e.target.value)
-                    }
+                    onChange={(e) => updateField(t.id, "note", e.target.value)}
                   />
                 </div>
               </div>
@@ -94,9 +85,6 @@ export default function Transactions() {
           </section>
         ))}
       </main>
-      
-    
-</>
-   
+    </>
   );
 }
